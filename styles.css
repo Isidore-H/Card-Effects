@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap');
+/* Google Fonts via loli.net 镜像（国内可访问） */
+@import url('https://fonts.loli.net/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap');
 
 :root {
   --dark: #000;
@@ -267,7 +268,7 @@ section {
   justify-content: center;
   align-items: center;
   font-size: 1rem;
-  background-color: var(--accent-2);
+  background-color: var(--light2);
   border-radius: 0.25rem;
 }
 
