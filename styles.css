@@ -1,6 +1,7 @@
 /* Google Fonts via loli.net 镜像（国内可访问） */
 @import url('https://fonts.loli.net/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap');
 
+/* ===== 颜色变量 ===== */
 :root {
   --dark: #000;
   --light: #f9f4eb;
@@ -10,6 +11,7 @@
   --accent-3: #fcdca6;
 }
 
+/* 全局重置 */
 * {
   padding: 0;
   margin: 0;
@@ -37,6 +39,7 @@ span {
   font-weight: 500;
 }
 
+/* 固定顶部导航 */
 nav {
   position: fixed;
   width: 100vw;
@@ -63,6 +66,7 @@ nav {
   color: var(--dark);
 }
 
+/* 每个 section 占满视口 */
 section {
   position: relative;
   width: 100vw;
@@ -84,6 +88,7 @@ section {
   color: var(--light);
 }
 
+/* ===== Hero 区域：三张卡片居中排列 ===== */
 .hero-cards {
   position: absolute;
   top: 50%;
@@ -106,6 +111,7 @@ section {
   justify-content: space-between;
 }
 
+/* 卡片标题：左右各一个字 */
 .card-title {
   width: 100%;
   display: flex;
@@ -116,6 +122,7 @@ section {
   font-size: 0.7rem;
 }
 
+/* 三张 hero 卡片颜色和初始旋转锚点不同 */
 .hero-cards .card#hero-card-1 {
   background-color: var(--accent-1);
   transform-origin: top right;
@@ -133,10 +140,12 @@ section {
   z-index: 0;
 }
 
+/* ===== Services 区域 ===== */
 .services {
   padding: 8rem 2rem;
 }
 
+/* 标题初始在下方，由 JS 滚动驱动上移 */
 .services-header {
   position: relative;
   width: 100%;
@@ -145,6 +154,7 @@ section {
   will-change: transform;
 }
 
+/* ===== 翻转卡片区域（fixed 定位覆盖全屏） ===== */
 .cards {
   position: fixed;
   top: 0;
@@ -171,9 +181,10 @@ section {
   flex: 1;
   position: relative;
   aspect-ratio: 5/7;
-  perspective: 1000px;
+  perspective: 1000px; /* 为 3D 翻转提供透视 */
 }
 
+/* 卡片浮动动画 wrapper */
 .cards-container .card .card-wrapper {
   position: absolute;
   top: 50%;
@@ -196,6 +207,7 @@ section {
   }
 }
 
+/* 三张卡片浮动延迟不同，产生错落感 */
 #card-1 .card-wrapper {
   animation-delay: 0;
 }
@@ -208,19 +220,21 @@ section {
   animation-delay: 0.5s;
 }
 
+/* ===== 3D 翻转核心结构 ===== */
 .flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  transform-style: preserve-3d;
+  transform-style: preserve-3d; /* 保留子元素 3D 空间 */
 }
 
+/* 正反面绝对定位重叠 */
 .flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 1rem;
-  backface-visibility: hidden;
+  backface-visibility: hidden; /* 背面朝内时隐藏 */
   overflow: hidden;
 }
 
@@ -232,6 +246,7 @@ section {
   align-items: center;
 }
 
+/* 三色正面背景 */
 #card-1 .flip-card-front {
   background-color: var(--accent-1);
 }
@@ -244,6 +259,7 @@ section {
   background-color: var(--accent-3);
 }
 
+/* 背面默认 Y 轴旋转 180°，隐藏 */
 .flip-card-back {
   padding: 1rem;
   display: flex;
@@ -272,6 +288,8 @@ section {
   border-radius: 0.25rem;
 }
 
+/* ===== 卡片的初始状态（由 JS 驱动动画） ===== */
+/* 初始位置：散开在角落，缩小，带旋转 */
 #card-1 {
   transform: translateX(100%) translateY(-100%) rotate(-5deg) scale(0.25);
   z-index: 2;
@@ -287,6 +305,7 @@ section {
   z-index: 0;
 }
 
+/* 初始透明，由 JS 控制淡入 */
 .cards-container .card {
   opacity: 0;
 }

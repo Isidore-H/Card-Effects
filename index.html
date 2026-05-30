@@ -14,11 +14,13 @@
 </head>
 
 <body>
+  <!-- 顶部导航栏（固定在页面顶部） -->
   <nav>
     <div class="logo"><span>Site Logo</span></div>
     <div class="menu-btn"><span>Menu</span></div>
   </nav>
 
+  <!-- Hero 区域：三张初始卡片，滚动时散开消失 -->
   <section class="hero">
     <div class="hero-cards">
       <div class="card" id="hero-card-1">
@@ -54,21 +56,26 @@
     </div>
   </section>
 
+  <!-- About 过渡区域 -->
   <section class="about">
     <h1>Keep scrolling -- it gets good</h1>
   </section>
 
+  <!-- Services 区域（固定定位，撑起滚动空间） -->
   <section class="services">
     <div class="services-header">
       <h1>Stuff I make so you don't have to</h1>
     </div>
   </section>
 
+  <!-- 翻转卡片区域：三张带有前后翻转效果的卡片 -->
   <section class="cards">
     <div class="cards-container">
+      <!-- 卡片 1：Plan -->
       <div class="card" id="card-1">
         <div class="card-wrapper">
           <div class="flip-card-inner">
+            <!-- 卡片正面 -->
             <div class="flip-card-front">
               <div class="card-title">
                 <span>Plan</span>
@@ -79,6 +86,7 @@
                 <span>Plan</span>
               </div>
             </div>
+            <!-- 卡片背面 -->
             <div class="flip-card-back">
               <div class="card-title">
                 <span>Plan</span>
@@ -101,6 +109,7 @@
         </div>
       </div>
 
+      <!-- 卡片 2：Design -->
       <div class="card" id="card-2">
         <div class="card-wrapper">
           <div class="flip-card-inner">
@@ -136,6 +145,7 @@
         </div>
       </div>
 
+      <!-- 卡片 3：Develop -->
       <div class="card" id="card-3">
         <div class="card-wrapper">
           <div class="flip-card-inner">
@@ -173,6 +183,7 @@
     </div>
   </section>
 
+  <!-- Outro 结束区域 -->
   <section class="outro">
     <h1>The story's not over yet</h1>
   </section>
