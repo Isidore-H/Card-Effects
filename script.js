@@ -1,4 +1,10 @@
-document.addEventListener('DOMContentLoaded', () => {
+import './styles.css'
+import 'uno.css'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Lenis from 'lenis'
+
+const initAnimations = () => {
   // 注册 GSAP ScrollTrigger 插件
   gsap.registerPlugin(ScrollTrigger)
 
@@ -216,4 +222,10 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     }
   })
-})
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initAnimations, { once: true })
+} else {
+  initAnimations()
+}
