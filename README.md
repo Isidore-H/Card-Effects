@@ -20,7 +20,7 @@
 
 #### 项目已部署到 GitHub Pages
 
-1. 页面地址为 https://你的用户名.github.io/仓库名/
+1. 页面地址为 https://isidore-h.github.io/Card-Effects/
 
 #### 样式说明
 
